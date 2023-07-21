@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 
 </head>
 
@@ -14,6 +15,7 @@
         <div class="div">
 
             <table class="tabela" id="tabela">
+                <h2 class="title">Controle de Produtos</h2>
                 <tr>
                     <th>ID</th>
                     <th>PRODUTO</th>
@@ -233,7 +235,7 @@
             getprodutos();
 
             //mensagem de produto salvo e escondo a div
-            alert('produto salvo');
+            alert('Produto salvo no banco de dados');
             let div = document.getElementById('div-editar');
             div.classList.remove('div-editar-ativo');
             div.classList.add('div-editar-inativo');
@@ -242,7 +244,7 @@
         function deleta(idDoProdutoDelete) {
 
             //mensagem de confirmação
-            let text = "Confirma a exclusão do registro?";
+            let text = "Deseja apagar o produto?";
             if (confirm(text) == true) {
                 //trazendo o objeto e descobrindo o seu INDEX 9índice do vetor
                 let obj = produtos.find(prod => prod.id == idDoProdutoDelete);
