@@ -61,6 +61,22 @@ h2{
     margin: 4vw;
     display: block;
 }
+.div-view-inativo{    
+    width: 40%;
+    min-width:30%;
+    text-align: center;
+    margin: 4vw;
+    display: none;
+}
+.div-view-ativo{    
+    width: 40%;
+    min-width:30%;
+    text-align: center;
+    margin: 4vw;
+    display: block;
+}
+
+
 
 button{
     margin-top: 5px;
@@ -109,6 +125,11 @@ th, td, tr{
 }
 
 .btn-editar{
+    font-size: 0.6em;
+    background-color: rgba(23, 21, 136, 0.6); ;
+
+}
+.btn-view{
     font-size: 0.6em;
     background-color: rgba(23, 21, 136, 0.6); ;
 

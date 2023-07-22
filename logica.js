@@ -59,13 +59,22 @@ produtos.forEach((produto) => {
     botaoEditar.setAttribute('class', 'btn-editar');
     botaoEditar.setAttribute('onclick', `mostraEditar(${produto.id})`);
     botaoEditar.innerHTML = 'EDITAR';
+    
+    //botão view
+    let botaoView = document.createElement('button');
+    botaoView.setAttribute('class', 'btn-view');
+    botaoView.setAttribute('onclick', `mostraView(${produto.id})`);
+    botaoView.innerHTML = 'View';
 
     //criando TDs e anexando a TR
     let td = document.createElement('td');
 
     td.appendChild(botaoEditar);
+    td.appendChild(botaoView);
     td.appendChild(document.createTextNode("    "));
     td.appendChild(botaoApagar);
+    td.appendChild(document.createTextNode("    "));
+    td.appendChild(botaoView);
     td.style.minWidth = '180px';
 
     tr = document.querySelector("#" + 'a' + produto.id);
@@ -73,6 +82,12 @@ produtos.forEach((produto) => {
 
     //fecha a linha da tabela
     tabela.innerHTML += "</tr>";
+
+    // let td = document.createElement('td');
+
+    
+    
+
 });
 }
 
@@ -213,5 +228,25 @@ if (confirm(text) == true) {
 
 }
 
+function mostraView(idVisualizar){
 
+    
+const div = document.getElementById('div-view');
+if (div.classList.contains('div-view-inativo')) {
+    div.classList.remove('div-view-inativo');
+    div.classList.add('div-view-ativo');
+}
+else {
+    div.classList.remove('div-view-ativo');
+    div.classList.add('div-view-inativo');
+}
+
+//filtrar o vetor produtos e pegar só aquele produto com aquela id
+let vetorProdutoEditar = produtos.filter(function (item) {
+    return item.id == idDoProdutoEdit;
+});
+let produtoEditar = vetorProdutoEditar[0];
+
+
+}
 
